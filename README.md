@@ -1,22 +1,37 @@
 # Product Review Analysis
 
-![Product Review Analysis overview](assets/portfolio-cover.png)
+**A notebook workflow that separates data collection from analysis, complementing the Flask review application.**
 
-A companion notebook workflow separating product-review collection from analysis. It complements the Flask application without representing another independent deployed product.
+![Separate collection from analysis.](assets/readme-overview.png)
 
-[Portfolio home](https://github.com/oldprize47-SH) · [Original repository](https://github.com/sangheon47/CeneoScraperAI11)
+[What I built](#what-i-built) · [My role](#my-role) · [Code and reproduction](#code-and-reproduction) · [Portfolio](https://github.com/oldprize47-SH)
 
-## Contribution and context
+## What I built
+
+| Deliverable | What it does | Explore |
+|---|---|---|
+| **Collection notebook** | Trace data acquisition | [Source / result](scraper.ipynb) |
+| **Analysis notebook** | Inspect processing and outputs | [Source / result](analyzer.ipynb) |
+| **Environment record** | Historical dependencies | [Source / result](requirements.txt) |
+
+### Result at a glance
+
+Both notebooks passed JSON structure checks. Cells and external requests were not rerun.
+
+## My role
 
 This is a coursework archive. Product reviews and platform content retain their original ownership; notebook experiments are not a commercial data service.
 
-## Code map
+## How it works
 
-| Entry | Purpose |
-|---|---|
-| [scraper.ipynb](scraper.ipynb) | Historical collection workflow |
-| [analyzer.ipynb](analyzer.ipynb) | Historical analysis workflow |
-| [requirements.txt](requirements.txt) | Recorded notebook environment |
+```mermaid
+flowchart LR
+    N0["Collect"] --> N1
+    N1["Structure"] --> N2
+    N2["Analyse"]
+```
+
+## Code and reproduction
 
 ## Reading and verification
 
@@ -27,9 +42,8 @@ old environment. No new network collection or independent benchmark was performe
 
 [Companion Flask application](https://github.com/oldprize47-SH/ceneo-review-webapp)
 
-## Archive policy
+## Source and credits
 
-The fork retains upstream history, source attributions and course material. The
-portfolio documentation does not assign a new licence or claim sole authorship
-of inherited code. Current checks are stated above; an untested component is not
-presented as verified.
+[Original repository](https://github.com/sangheon47/CeneoScraperAI11) · [Portfolio home](https://github.com/oldprize47-SH)
+
+Course scaffolding, team contributions and third-party assets retain their original attribution. This documentation does not grant a new licence.

@@ -1,6 +1,24 @@
 # Product Review Analysis
 
-These notebooks separate product-review collection from analysis. [scraper.ipynb](scraper.ipynb) contains the collection workflow, and [analyzer.ipynb](analyzer.ipynb) processes the resulting data. They are related to my [Flask review application](https://github.com/oldprize47-SH/ceneo-review-webapp).
+These notebooks separate product-review collection from analysis. [scraper.ipynb](scraper.ipynb) contains the collection workflow, and [analyzer.ipynb](analyzer.ipynb) processes the resulting data. They are related to the related [Flask review application](https://github.com/oldprize47-SH/ceneo-review-webapp).
+
+## Project goal
+
+Turn collected product reviews into structured records, summary statistics and readable plots.
+
+![Project goal: ceneo-review-analysis](docs/goals/project-focus-v1.png)
+
+AI-generated concept illustration. Device appearance, interface layout and example graphics are illustrative, not project photographs or measured results.
+
+## Where it could be used
+
+The workflow could help someone explore collected product feedback by reading review text alongside rating and recommendation distributions. Keeping structured review records also makes it possible to repeat an analysis without recollecting every page. The summaries describe the collected sample rather than all customers, and collection depends on the source site and permitted access.
+
+## At a glance
+
+![Ceneo review-analysis notebooks](docs/flowcharts/ceneo-notebooks.png)
+
+Overview reconstructed from the documented project and code. Results and verification limits are described below. [SVG](docs/flowcharts/ceneo-notebooks.svg)
 
 ## Collection and analysis are separate steps
 
@@ -14,7 +32,7 @@ For a read-only review, open `analyzer.ipynb` on GitHub and follow the path from
 
 To execute a local copy, use a Jupyter-compatible environment, inspect [requirements.txt](requirements.txt), and reconcile the notebook's product ID and data paths. Run analysis only against a compatible saved dataset. The collection notebook makes network requests and depends on the site's current structure; it is not an offline test fixture.
 
-This work comes from my 2024 exchange-student coursework. The archive retains the original learning context; it does not establish individual authorship of every supplied cell or a production deployment.
+This work comes from Sangheon Park's 2024 exchange-student coursework. The archive retains the original learning context; it does not establish individual authorship of every supplied cell or a production deployment.
 
 The saved notebooks can be read on GitHub. Both passed notebook JSON checks on 28 September 2026, but their cells were not rerun. Changes to the website, remote services or the original Python environment may affect execution. The dependency snapshot is in [requirements.txt](requirements.txt).
 

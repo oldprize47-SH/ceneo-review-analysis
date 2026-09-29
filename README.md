@@ -10,6 +10,8 @@
 
 ## 한국어
 
+[코드 읽는 순서](#코드-따라-읽기)
+
 
 
 이 노트북들은 상품 리뷰 수집과 분석을 분리합니다. [scraper.ipynb](scraper.ipynb)에는 수집 작업 흐름이, [analyzer.ipynb](analyzer.ipynb)에는 수집한 데이터를 처리하는 과정이 담겨 있습니다. 이들은 관련 [Flask 리뷰 애플리케이션](https://github.com/oldprize47-SH/Ceneo)과 연결되는 프로젝트입니다.
@@ -24,11 +26,11 @@
 
 
 
-![프로젝트 목표: ceneo-review-analysis](docs/goals/project-focus-v1.png)
+![프로젝트 목표: ceneo-review-analysis](docs/goals/goal.png)
 
 
 
-AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이스 배치, 예시 그래픽은 설명을 위한 표현이며, 실제 프로젝트 사진이나 측정 결과가 아닙니다.
+<sub>AI 생성 개념도</sub>
 
 
 
@@ -48,7 +50,7 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 
 
 
-문서화된 프로젝트 내용과 코드를 바탕으로 흐름을 살펴볼 수 있도록 재구성했습니다. 아래 설명에서 결과와 함께 검증한 범위와 한계를 확인할 수 있습니다. [SVG](docs/flowcharts/ceneo-notebooks.svg)
+<sub>[SVG](docs/flowcharts/ceneo-notebooks.svg)</sub>
 
 
 
@@ -63,6 +65,16 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 분석 노트북은 저장된 레코드를 Pandas DataFrame으로 읽어 들입니다. 리뷰 수를 세고, 장점이나 단점이 포함된 리뷰가 각각 몇 개인지 확인하며, 평균 평점을 계산하고, 평점과 추천 여부의 분포를 그래프로 그립니다. 평점 그래프는 리뷰가 점수별로 어떻게 분포하는지 보여 주고, 추천 여부 그래프는 긍정·부정·응답 없음으로 구분합니다. 두 그래프는 수집된 리뷰를 이해하는 데 활용할 수 있습니다. 전체 고객을 대표하는 설문조사 결과는 아니라는 점을 함께 참고하면 좋습니다.
 
 
+
+### 코드 따라 읽기
+
+아래 순서는 파일의 역할과 연결을 이해하기 위한 안내입니다. 독립 과제나 보드별 프로그램은 한꺼번에 실행하지 않고 해당 항목의 실행 안내를 따릅니다.
+
+| 순서 | 파일 | 역할과 다음 단계 |
+|---|---|---|
+| 1 | [scraper.ipynb](scraper.ipynb) | 상품 ID로 요청 주소를 만들고 리뷰를 파싱한 뒤 opinions/<상품 ID>.json에 저장합니다. |
+| 2 | [analyzer.ipynb](analyzer.ipynb) | 같은 상품 ID의 JSON을 읽어 통계와 평점·추천 여부 그래프를 만듭니다. 두 노트북의 기본 상품 ID가 다르므로 맞춰야 합니다. |
+| 3 | [requirements.txt](requirements.txt) | 실행 환경을 준비할 때 의존성을 확인합니다. 분석만 볼 때는 저장된 JSON이 있으면 수집 요청을 다시 할 필요가 없습니다. |
 
 ### 시작하기
 
@@ -100,6 +112,8 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 
 ## English
 
+[Code walkthrough](#code-walkthrough)
+
 
 
 **Product Review Analysis**
@@ -118,11 +132,11 @@ Turn collected product reviews into structured records, summary statistics and r
 
 
 
-![Project goal: ceneo-review-analysis](docs/goals/project-focus-v1.png)
+![Project goal: ceneo-review-analysis](docs/goals/goal.png)
 
 
 
-AI-generated concept illustration. Device appearance, interface layout and example graphics are illustrative, not project photographs or measured results.
+<sub>AI-generated concept illustration</sub>
 
 
 
@@ -142,7 +156,7 @@ The workflow could help someone explore collected product feedback by reading re
 
 
 
-This overview helps you follow the project through its documentation and code. The sections below explain the results and the limits of verification. [SVG](docs/flowcharts/ceneo-notebooks.svg)
+<sub>[SVG](docs/flowcharts/ceneo-notebooks.svg)</sub>
 
 
 
@@ -184,3 +198,12 @@ Existing output is historical coursework. No new review collection was performed
 
 [Original repository](https://github.com/sangheon47/CeneoScraperAI11). Original history and attribution are retained.
 
+### Code walkthrough
+
+Use this order to understand each file and its connections. Independent exercises and board targets are not one executable; follow the relevant run instructions below.
+
+| Step | File | Role and next step |
+|---|---|---|
+| 1 | [scraper.ipynb](scraper.ipynb) | Build the request from a product ID, parse reviews and save opinions/<product ID>.json. |
+| 2 | [analyzer.ipynb](analyzer.ipynb) | Load JSON for the same product ID and produce summary/rating/recommendation plots. The two notebooks currently use different default IDs; align them first. |
+| 3 | [requirements.txt](requirements.txt) | Check dependencies before execution; existing compatible JSON lets you analyse without another collection request. |
